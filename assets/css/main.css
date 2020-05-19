@@ -2820,3 +2820,20 @@ body.is-menu-visible #menu {
   transform: translateX(0);
   box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
   visibility: visible; }
+
+
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo>.header-text {
+    margin: 0 0 -2px 5px;
+  }
+  .logo-img {
+    width: 30px;
+    height: 30px;
+    background-image: url(../../images/logo100x100.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
