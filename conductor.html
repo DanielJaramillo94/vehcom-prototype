@@ -24,7 +24,6 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="index.html">Home</a></li>
-			<li><a href="conductor.html">Conductor</a></li>
 			<li><a href="elements.html">Elements</a></li>
 			<li><a href="generic.html">Generic</a></li>
 		</ul>
@@ -32,35 +31,15 @@
 
 	<!-- Heading -->
 	<div id="heading">
-		<h1>¿Hasta dónde me acompañas?</h1>
+		<h1>¿A dónde vas?</h1>
 	</div>
 
 	<!-- Main -->
 	<section id="main" class="wrapper">
 		<div class="inner">
 			<div class="content">
-				<h2>Rutas disponibles</h2>
+				<h2>Ingresa tu ruta</h2>
 				<div class="routes-container">
-					<div class="options">
-						<div>
-							<div class="opt opt-1" data-route="castilla">
-								<span>Castilla - UdeA</span>
-							</div>
-							<div class="opt opt-2" data-route="estadio">
-								<span>Estadio - UdeA</span>
-							</div>
-							<div class="opt opt-3" data-route="itagui">
-								<span>Itagüí - UdeA</span>
-							</div>
-							<div class="opt opt-4" data-route="premium">
-								<span>Premium Plaza - UdeA</span>
-							</div>
-							<div class="opt opt-5" data-route="termisur">
-								<span>Terminal del Sur - UdeA</span>
-							</div>
-						</div>
-						<input type="submit" value="Cancelar viaje" class="primary btn-cancel-route hide-element" />
-					</div>
 					<div class="map-img"></div>
 				</div>
 				<style>
@@ -70,44 +49,17 @@
 						display: flex;
 					}
 
-					.options {
-						flex-grow: 1;
-						display: flex;
-						flex-direction: column;
-						justify-content: space-between;
-					}
-
-					.opt {
-						margin: 0 5px 0 5px;
-						cursor: pointer;
-					}
-
-					.opt:hover {
-						background-color: rgba(0, 0, 0, 0.1);
-						cursor: pointer;
-					}
-
-					.opt span {
-						width: 100px;
-					}
-
 					.map-img {
 						flex-grow: 7;
-						background-image: url(./images/places/castilla.jpg);
+						background-image: url(./images/map.jpg);
 						background-repeat: no-repeat;
 						background-size: cover;
-					}
-					.btn-cancel-route {
-						align-self: center;
-					}
-					.hide-element {
-						display: none !important;
 					}
 				</style>
 
 				<hr />
 				<p class="details">Detalles</p>
-				<div class="details-container">
+				<!-- <div class="details-container">
 					
 					<div class="picture"></div>
 					<div class="info">
@@ -124,25 +76,28 @@
 							<span>❗ Asientos disponibles: 2</span>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
-				<hr />
+				<!-- <hr /> -->
 
 				<form method="post" action="#">
 					<div class="row gtr-uniform">
-						<div class="col-6 col-12-xsmall">
-							<input type="text" name="name" id="name" value="" placeholder="Nombre" />
+						<div class="col-12-xsmall">
+							<span>🕒</span>
+							<input type="text" name="name" id="name" value="" placeholder="Hora de salida" />
 						</div>
-						<div class="col-6 col-12-xsmall">
-							<input type="email" name="email" id="email" value="" placeholder="Correo" />
+						<div class="col-12-xsmall">
+							<span>📝</span>
+							<input type="text" name="name" id="name" value="" placeholder="Placa del vehículo" />
 						</div>
-						<div class="col-6 col-12-xsmall">
-							<input type="text" name="name" id="name" value="" placeholder="Celular" />
+						<div class="col-12-xsmall">
+							<span>🚗</span>
+							<input type="text" name="name" id="name" value="" placeholder="Descripción del vehículo" />
 						</div>
-						<div class="col-6 col-12-xsmall">
-							<input type="email" name="email" id="email" value="" placeholder="Lugar de espera" />
+						<div class="col-12-xsmall">
+							<span>❗</span>
+							<input type="text" name="name" id="name" value="" placeholder="Asientos disponibles" />
 						</div>
-						<!-- Break -->
 						<div class="col-12">
 							<textarea name="textarea" id="textarea" placeholder="Comentarios adicionales" rows="6"></textarea>
 						</div>
@@ -248,18 +203,11 @@
 <script>
 	let options = document.querySelectorAll('.opt');
 	let mapImg = document.querySelectorAll('.map-img')[0];
-	let cancelBtn = document.querySelectorAll('.btn-cancel-route')[0];
 
 	options.forEach(option => option.addEventListener('click', () => {
 		let routeValue = option.attributes.getNamedItem('data-route').value;
+		console.log(mapImg);
+
 		mapImg.style.backgroundImage = `url(./images/places/${routeValue}.jpg)`;
-
-		if (routeValue === 'estadio') {
-			cancelBtn.classList.remove('hide-element');
-		} else {
-			cancelBtn.classList.add('hide-element');
-		}
 	}));
-
-	// document.querySelectorAll('.btn-cancel-route')[0].addEventListener('click', () => {});
 </script>

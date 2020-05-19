@@ -39,7 +39,7 @@
 	<section id="main" class="wrapper">
 		<div class="inner">
 			<div class="content">
-				<h2>Rutas disponibles</h2>
+				<h2>Rutas ingresadas</h2>
 				<div class="routes-container">
 					<div class="options">
 						<div>
@@ -59,7 +59,7 @@
 								<span>Terminal del Sur - UdeA</span>
 							</div>
 						</div>
-						<input type="submit" value="Cancelar viaje" class="primary btn-cancel-route hide-element" />
+						<input type="submit" value="Cancelar ruta" class="primary btn-cancel-route" />
 					</div>
 					<div class="map-img"></div>
 				</div>
@@ -97,9 +97,11 @@
 						background-repeat: no-repeat;
 						background-size: cover;
 					}
+
 					.btn-cancel-route {
 						align-self: center;
 					}
+
 					.hide-element {
 						display: none !important;
 					}
@@ -108,8 +110,6 @@
 				<hr />
 				<p class="details">Detalles</p>
 				<div class="details-container">
-					
-					<div class="picture"></div>
 					<div class="info">
 						<div class="time">
 							<span>🕒 Hora de salida: A las 5 p.m. salgo de casa</span>
@@ -125,35 +125,57 @@
 						</div>
 					</div>
 				</div>
-
 				<hr />
-
-				<form method="post" action="#">
-					<div class="row gtr-uniform">
-						<div class="col-6 col-12-xsmall">
-							<input type="text" name="name" id="name" value="" placeholder="Nombre" />
-						</div>
-						<div class="col-6 col-12-xsmall">
-							<input type="email" name="email" id="email" value="" placeholder="Correo" />
-						</div>
-						<div class="col-6 col-12-xsmall">
-							<input type="text" name="name" id="name" value="" placeholder="Celular" />
-						</div>
-						<div class="col-6 col-12-xsmall">
-							<input type="email" name="email" id="email" value="" placeholder="Lugar de espera" />
-						</div>
-						<!-- Break -->
-						<div class="col-12">
-							<textarea name="textarea" id="textarea" placeholder="Comentarios adicionales" rows="6"></textarea>
-						</div>
-						<!-- Break -->
-						<div class="col-12">
-							<ul class="actions">
-								<li><input type="submit" value="Submit Form" class="primary" /></li>
-							</ul>
+				<p class="accompany-persons">¿Quiénes me acompañan?</p>
+				<div class="person-details">
+					<div class="person">
+						<div class="picture"></div>
+						<div class="info">
+							<div class="name">
+								<span>💬 Nombre: Carolina</span>
+							</div>
+							<div class="email">
+								<span>📧 Correo: Caro@test.com</span>
+							</div>
+							<div class="cell-number">
+								<span>📱 Número celular: 321 654 98 87</span>
+							</div>
+							<div class="place">
+								<span>📍 Aquí te espera: Calle 56 # 36 -193, al frente de una casa verde</span>
+							</div>
+							<div class="desc">
+								<span>📝 Comentarios adicionales: Voy vestida de rojo y llevo una maleta negra</span>
+							</div>
 						</div>
 					</div>
-				</form>
+					<div class="delete-person hide-element">
+						<div class="delete-person-btn"><span>X</span></div>
+					</div>
+				</div>
+				<!-- <br>	 -->
+				<div class="person-details">
+					<div class="person">
+						<div class="picture2"></div>
+						<div class="info">
+							<div class="name">
+								<span>💬 Nombre: Manuela</span>
+							</div>
+							<div class="email">
+								<span>📧 Correo: Manu@test.com</span>
+							</div>
+							<div class="cell-number">
+								<span>📱 Número celular: 123 456 78 89</span>
+							</div>
+							<div class="place">
+								<span>📍 Aquí te espera: Calle 56 # 42 -193, al frente del D1</span>
+							</div>
+						</div>
+					</div>
+					<div class="delete-person hide-element">
+						<div class="delete-person-btn"><span>X</span></div>
+					</div>
+				</div>
+				<hr />
 			</div>
 		</div>
 	</section>
@@ -165,7 +187,54 @@
 			font-size: 2em;
 		}
 
+		.accompany-persons {
+			margin: 0;
+			margin-top: 20px;
+			font-size: 2em;
+		}
+		
+		.person .info {
+			margin-left: 15px;
+		}
+
+		.person-details {
+			padding: 10px;
+			display: flex;
+		}
+		.person-details:hover {
+			border-radius: 5px;
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+		.delete-person {
+			padding: 30px;
+			width: 50px;
+			/* background-color: rebeccapurple; */
+			align-self: center;
+		}
+		.delete-person-btn {
+			font-size: 0.7em;
+			width: 20px;
+			height: 20px;
+			background-color: rgba(0, 0, 0, 0.1);
+			align-self: center;
+			border-radius: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.delete-person-btn:hover {
+			cursor: pointer;
+			background-color: rgba(255, 0, 0, 0.45);
+		}
+
 		.details-container {
+			height: 120px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+		}
+
+		.person {
 			height: 120px;
 			width: 100%;
 			display: flex;
@@ -180,11 +249,18 @@
 			background-image: url(./images/pic01.jpg);
 			background-repeat: no-repeat;
 			background-size: cover;
-
+		}
+		.picture2 {
+			width: 100px;
+			height: 100px;
+			margin-left: 15px;
+			border-radius: 50%;
+			background-image: url(./images/pic02.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
 		}
 
 		.details-container .info {
-			/* width: 100%; */
 			margin-left: 15px;
 		}
 	</style>
@@ -248,18 +324,23 @@
 <script>
 	let options = document.querySelectorAll('.opt');
 	let mapImg = document.querySelectorAll('.map-img')[0];
-	let cancelBtn = document.querySelectorAll('.btn-cancel-route')[0];
-
+	
 	options.forEach(option => option.addEventListener('click', () => {
 		let routeValue = option.attributes.getNamedItem('data-route').value;
 		mapImg.style.backgroundImage = `url(./images/places/${routeValue}.jpg)`;
-
-		if (routeValue === 'estadio') {
-			cancelBtn.classList.remove('hide-element');
-		} else {
-			cancelBtn.classList.add('hide-element');
-		}
 	}));
 
-	// document.querySelectorAll('.btn-cancel-route')[0].addEventListener('click', () => {});
+
+
+	let persons = document.querySelectorAll('.person-details');
+
+	persons.forEach(person => person.addEventListener('mouseenter', () => {
+		let deleteBtn = person.children[1];
+		deleteBtn.classList.remove('hide-element');
+	}));
+	persons.forEach(person => person.addEventListener('mouseleave', () => {
+		let deleteBtn = person.children[1];
+		deleteBtn.classList.add('hide-element');
+	}));
+
 </script>
