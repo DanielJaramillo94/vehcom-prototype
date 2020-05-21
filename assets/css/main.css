@@ -2837,3 +2837,10 @@ body.is-menu-visible #menu {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .plain {
+    display: flex;
+  }
+  .plain>li {
+    padding: 5px;
+  }
