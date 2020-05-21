@@ -63,7 +63,7 @@
 								<span>Terminal del Sur - UdeA</span>
 							</div>
 						</div>
-						<input type="submit" value="Cancelar ruta" class="primary btn-cancel-route" />
+						<input type="submit" value="Cancelar ruta" class="primary btn-cancel-route input-submit-button" />
 					</div>
 					<div class="map-img"></div>
 				</div>
@@ -329,4 +329,8 @@
 		deleteBtn.classList.add('hide-element');
 	}));
 
+	let submitBtns = document.querySelectorAll('.input-submit-button');
+	submitBtns.forEach(submitBtn => submitBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+	}));
 </script>

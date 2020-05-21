@@ -109,7 +109,7 @@
 						<!-- Break -->
 						<div class="col-12">
 							<ul class="actions">
-								<li><input type="submit" value="Submit Form" class="primary" /></li>
+								<li><input type="submit" value="Submit Form" class="primary input-submit-button" /></li>
 							</ul>
 						</div>
 					</div>
@@ -196,5 +196,10 @@
 		console.log(mapImg);
 
 		mapImg.style.backgroundImage = `url(./images/places/${routeValue}.jpg)`;
+	}));
+
+	let submitBtns = document.querySelectorAll('.input-submit-button');
+	submitBtns.forEach(submitBtn => submitBtn.addEventListener('click', (e) => {
+		e.preventDefault();
 	}));
 </script>
