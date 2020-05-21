@@ -2844,3 +2844,7 @@ body.is-menu-visible #menu {
   .plain>li {
     padding: 5px;
   }
+
+  .testimonials .content {
+    height: 130px;
+  }
